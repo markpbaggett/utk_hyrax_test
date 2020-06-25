@@ -10,6 +10,8 @@ class Image < ActiveFedora::Base
   
   property :year, predicate: "http://www.europeana.eu/schemas/edm/year"
 
+  property :dataprovider, predicate: "http://www.europeana.eu/schemas/edm/dataProvider", multiple: false
+
   # This must be included at the end, because it finalizes the metadata
   # schema (by adding accepts_nested_attributes)
   include ::Hyrax::BasicMetadata

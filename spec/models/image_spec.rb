@@ -11,6 +11,13 @@ RSpec.describe Image do
       end
     end
 
+    context "with a new Image" do
+      it "has no dataprovider value when it is first created" do
+        image = Image.new
+        expect(image.dataprovider).to be_empty
+      end
+    end
+
     context "with an Image that has a year defined" do
       it "can set and retrieve a year value" do
         image = Image.new
@@ -18,5 +25,14 @@ RSpec.describe Image do
         expect(image.year).to eq(["2005"])
       end
     end
+
+    context "with an Image that has a data provider defined" do
+      it "can set and retrieve a year value" do
+        image = Image.new
+        image.dataprovider = ["University of Tennessee"]
+        expect(image.dataprovider).to eq(["University of Tennessee"])
+      end
+    end
+
   end
 end

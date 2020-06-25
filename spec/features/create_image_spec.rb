@@ -50,10 +50,10 @@ RSpec.feature 'Create a Image', js: false do
       click_link "Descriptions" # switch tab
       fill_in('Title', with: 'My Test Work')
       fill_in('Creator', with: 'Doe, Jane')
-      fill_in('Keyword', with: 'testing')
       select('In Copyright', from: 'Rights statement')
       click_link("Additional fields")
       fill_in "Year", with: "2005"
+      #fill_in "Data Provider", with "University of Tennessee"
 
       # With selenium and the chrome driver, focus remains on the
       # select box. Click outside the box so the next line can't find
