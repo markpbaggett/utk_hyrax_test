@@ -6,5 +6,6 @@ module Hyrax
     self.model_class = ::Image
     self.terms += [:resource_type]
     self.terms += [:year]
+    self.required_fields -= [:keyword]
   end
 end
