@@ -3,34 +3,20 @@
 require 'rails_helper'
 
 RSpec.describe Image do
-  describe "#year" do
-    context "with a new Image" do
-      it "has no year value when it is first created" do
-        image = Image.new
-        expect(image.year).to be_empty
-      end
-    end
+  describe "#provider" do
 
     context "with a new Image" do
-      it "has no dataprovider value when it is first created" do
+      it "has no provider value when it is first created" do
         image = Image.new
-        expect(image.dataprovider).to be_empty
+        expect(image.provider).to be_nil
       end
     end
 
-    context "with an Image that has a year defined" do
-      it "can set and retrieve a year value" do
+    context "with an Image that has a provider defined" do
+      it "can set and retrieve a provider value" do
         image = Image.new
-        image.year = ["2005"]
-        expect(image.year).to eq(["2005"])
-      end
-    end
-
-    context "with an Image that has a data provider defined" do
-      it "can set and retrieve a year value" do
-        image = Image.new
-        image.dataprovider = ["University of Tennessee"]
-        expect(image.dataprovider).to eq(["University of Tennessee"])
+        image.provider = "University of Tennessee"
+        expect(image.provider).to eq("University of Tennessee")
       end
     end
 
