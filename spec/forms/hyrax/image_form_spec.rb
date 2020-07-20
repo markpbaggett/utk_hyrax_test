@@ -10,7 +10,6 @@ RSpec.describe Hyrax::ImageForm do
   let(:form)    { described_class.new(image, ability, request) }
   it "has the expected terms" do
     expect(form.terms).to include(:title)
-    expect(form.terms).to include(:year)
-    expect(form.terms).to include(:dataprovider)
+    expect(form.terms).to include(:provider)
   end
 end
