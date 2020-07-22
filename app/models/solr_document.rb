@@ -29,4 +29,9 @@ class SolrDocument
   def provider
     self[Solrizer.solr_name('provider')]
   end
+
+  def photographer
+    self[Solrizer.solr_name('photographer')]
+  end
+
 end

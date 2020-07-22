@@ -6,12 +6,14 @@ RSpec.describe Hyrax::ImagePresenter do
   let(:title) { ['Journey to Skull Island'] }
   let(:creator) { ['Quest, Jane'] }
   let(:provider) { "University of Tennessee. Libraries" }
+  let(:photographer) { ["Unknown"] }
   let(:visibility) { Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC }
   let :image do
     Image.new(
       title: title,
       creator: creator,
       provider: provider,
+      photographer: photographer,
       visibility: visibility
     )
   end
@@ -27,5 +29,10 @@ RSpec.describe Hyrax::ImagePresenter do
   it "delegates provider to solr document" do
     expect(solr_document).to receive(:provider)
     presenter.provider
+  end
+
+  it "delegates photographer to solr document" do
+    expect(solr_document).to receive(:photographer)
+    presenter.photographer
   end
 end

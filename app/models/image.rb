@@ -12,7 +12,9 @@ class Image < ActiveFedora::Base
     index.as :stored_searchable
   end
 
-  property :photographer, predicate: "http://id.loc.gov/vocabulary/relators/pht", multiple: true
+  property :photographer, predicate: "http://id.loc.gov/vocabulary/relators/pht", multiple: true do |index|
+    index.as :stored_searchable
+  end
 
   # This must be included at the end, because it finalizes the metadata
   # schema (by adding accepts_nested_attributes)

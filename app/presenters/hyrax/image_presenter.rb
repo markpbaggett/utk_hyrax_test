@@ -3,5 +3,6 @@
 module Hyrax
   class ImagePresenter < Hyrax::WorkShowPresenter
     delegate :provider, to: :solr_document
+    delegate :photographer, to: :solr_document
   end
 end
