@@ -12,6 +12,8 @@ class Image < ActiveFedora::Base
     index.as :stored_searchable
   end
 
+  property :photographer, predicate: "http://id.loc.gov/vocabulary/relators/pht", multiple: true
+
   # This must be included at the end, because it finalizes the metadata
   # schema (by adding accepts_nested_attributes)
   include ::Hyrax::BasicMetadata

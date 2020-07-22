@@ -11,5 +11,6 @@ RSpec.describe Hyrax::ImageForm do
   it "has the expected terms" do
     expect(form.terms).to include(:title)
     expect(form.terms).to include(:provider)
+    expect(form.terms).to include(:photographer)
   end
 end
