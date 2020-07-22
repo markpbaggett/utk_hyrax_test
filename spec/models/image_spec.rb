@@ -21,4 +21,23 @@ RSpec.describe Image do
     end
 
   end
+
+  describe "#photographer" do
+
+    context "with a new Image" do
+      it "has no photographer value when it is first created" do
+        image = Image.new
+        expect(image.photographer).to be_empty
+      end
+    end
+
+    context "with an Image that has a provider defined" do
+      it "can set and retrieve a provider value" do
+        image = Image.new
+        image.photographer = ["Unknown"]
+        expect(image.photographer).to eq(["Unknown"])
+      end
+    end
+
+  end
 end
