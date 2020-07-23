@@ -1,6 +1,8 @@
 development:
   archivist:
     - archivist1@example.com
+  admin:
+    - mbagget1@utk.edu
 
 test:
   archivist:
@@ -18,6 +20,8 @@ test:
   patron:
     - patron1@example.com
     - leland_himself@example.com
+  admin:
+    - mbagget1@utk.edu
 
 production:
   # Add roles for users here.
