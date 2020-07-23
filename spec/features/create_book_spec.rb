@@ -36,8 +36,8 @@ RSpec.feature 'Create a Book', js: false do
       click_link "Add new work"
 
       # If you generate more than one work uncomment these lines
-      # choose "payload_concern", option: "Book"
-      # click_button "Create work"
+      choose "payload_concern", option: "Book"
+      click_button "Create work"
 
       expect(page).to have_content "Add New Book"
       click_link "Files" # switch tab
@@ -52,6 +52,7 @@ RSpec.feature 'Create a Book', js: false do
       fill_in('Creator', with: 'Doe, Jane')
       fill_in('Keyword', with: 'testing')
       select('In Copyright', from: 'Rights statement')
+      fill_in('Provider', with: 'University of Tennessee. Libraries')
 
       # With selenium and the chrome driver, focus remains on the
       # select box. Click outside the box so the next line can't find

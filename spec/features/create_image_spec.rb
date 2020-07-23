@@ -36,8 +36,8 @@ RSpec.feature 'Create a Image', js: false do
       click_link "Add new work"
 
       # If you generate more than one work uncomment these lines
-      # choose "payload_concern", option: "Image"
-      # click_button "Create work"
+      choose "payload_concern", option: "Image"
+      click_button "Create work"
 
       expect(page).to have_content "Add New Image"
       click_link "Files" # switch tab
@@ -51,9 +51,8 @@ RSpec.feature 'Create a Image', js: false do
       fill_in('Title', with: 'My Test Work')
       fill_in('Creator', with: 'Doe, Jane')
       select('In Copyright', from: 'Rights statement')
+      fill_in('Provider', with: 'University of Tennessee. Libraries')
       click_link("Additional fields")
-      fill_in "Year", with: "2005"
-      #fill_in "Data Provider", with "University of Tennessee"
 
       # With selenium and the chrome driver, focus remains on the
       # select box. Click outside the box so the next line can't find
