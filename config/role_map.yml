@@ -3,6 +3,10 @@ development:
     - archivist1@example.com
   admin:
     - mbagget1@utk.edu
+  student:
+    - student@example.com
+  graduate_school:
+    - gradschool@example.com
 
 test:
   archivist:
