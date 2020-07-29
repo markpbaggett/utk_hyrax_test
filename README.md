@@ -1,41 +1,31 @@
-# README
+# UTK Hyrax Text
 
-<img align='right' height='100px' src='http://camp.curationexperts.com/sample-assets/Samvera%20Camp.png' />
+This repository includes code for deploying the instance of Hyrax for the Next Generation Repository.  It is based upon Data Curation Expert's original Docker instance for the UCLA 2019 Repo Camp.
 
-The goal of Samvera Camp is to introduce new developers to the skills and tools they will need to successfully build Samvera-based digital repository solutions.  There’s a lot of ground to cover and you won’t walk away at the end of the week a complete expert, but we hope we’ll have provided you enough of a scaffolding to jump-start your own work and keep learning like the rest of us.  We hope that the topics covered at Samvera Camp provide enough breadcrumbs that you’ll have a good idea where to start looking once you get home and start digging into problems on your own!
-
-We encourage participation from throughout the library and open source communities. In order to ensure that everyone can enjoy a safe, welcoming, and respectful environment, please familiarize yourself with the [Samvera Community Code of Conduct](https://wiki.duraspace.org/display/samvera/Code+of+Conduct) and [Anti-Harassment Policy](https://wiki.duraspace.org/display/samvera/Anti-Harassment+Policy)
-
-<img align='right' height='100px' src='http://camp.curationexperts.com/sample-assets/DCE-Sm-Square.png' />
-
-For more information on how to use this repository, please visit the [WIKI](https://github.com/RepoCamp/berlin2018/wiki).
-
-
-## Running with Docker Compose
+## Running and Building
 
 To start:
 
-```sh
+``` shell
+
 docker-compse run web rails db:setup
-docker-compose up
-```
-Rails will be running on port 3000.
+docker-compose up -d
 
-To run the specs:
-```sh
+```
+To run test specs:
+
+``` shell
+
 docker-compose run web rspec
+
 ```
-To use byebug:
 
-After hitting the byebug in your code, run docker ps to get the id
-for the web container. Copy that id and then run:
+To enter a bash prompt in the web container:
 
-```sh
-docker attach 943094304
+
 ```
-Hit enter and you'll be in the byebug.
 
-You'll find the bundled gems in the `./bundle` folder. This
-folder is gitignored to avoid commiting it.
+docker-compose run web bash
 
-<em>This repository was built and is managed by [Data Curation Experts LLC](https://curationexperts.com)</em>
+```
+
